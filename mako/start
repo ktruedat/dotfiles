@@ -1,0 +1,5 @@
+#!/bin/bash
+
+killall mako
+sleep 0.1
+mako -c ~/.config/hypr/mako/config &

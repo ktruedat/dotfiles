@@ -1,5 +1,0 @@
-#!/bin/bash
-
-killall dunst
-sleep 0.1
-dunst -conf ~/.config/hypr/dunst/dunstrc &
