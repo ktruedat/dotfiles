@@ -93,6 +93,20 @@ button:hover {
     margin-right: 0;
 }
 
+#window {
+    background-color: #303030;
+    color: #ebdbb2;
+    font-family: JetBrainsMono Nerd Font, monospace;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-bottom: 8px solid #272727;
+    border-radius: 5px;
+    margin-bottom: 2px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
 #clock {
     background-color: #98971a;
     color: #1d2021;
@@ -103,6 +117,7 @@ button:hover {
     border-bottom: 8px solid #828200;
     border-radius: 5px;
     margin-bottom: 2px;
+    margin-right: 4px;
 }
 
 #battery {
