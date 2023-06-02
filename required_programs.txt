@@ -6,6 +6,7 @@ rofi
 swaybg
 libnotify
 notification-daemon
+dunst
 networkmanager
 bluez
 bluez-utils
