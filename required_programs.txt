@@ -22,3 +22,4 @@ yad
 sox
 mint-themes
 xcursor-simp1e-gruvbox-light
+gtklock
