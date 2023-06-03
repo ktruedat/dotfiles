@@ -11,7 +11,7 @@
     // Modules configuration
     "custom/swaync": {
 	"format": " ",
-	"on-click": "swaync-client -t",
+	"on-click": "~/.config/hypr/swaync/scripts/tray_waybar.sh",
     },
     "wlr/workspaces": {
 	"on-click": "activate",
