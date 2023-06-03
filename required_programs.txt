@@ -6,7 +6,7 @@ rofi
 swaybg
 libnotify
 notification-daemon
-mako
+swaync
 networkmanager
 bluez
 bluez-utils

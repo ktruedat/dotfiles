@@ -11,7 +11,7 @@ run_hook pre &
 set_wallpaper ~/.config/hypr/wallpaper.png
 
 ~/.config/hypr/waybar/start
-~/.config/hypr/mako/start
+~/.config/hypr/swaync/start
 
 nm-applet &
 blueman-applet &
