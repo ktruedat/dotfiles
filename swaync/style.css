@@ -193,6 +193,8 @@
   margin-bottom: 400px;
   padding-bottom: 25px;
   padding-top: 5px;
+  padding-left: 10px;
+  padding-right: 9px;
 }
 
 .control-center-list {
@@ -218,10 +220,12 @@
 .widget-title {
   margin: 8px;
   font-size: 1.5rem;
+  font-weight: bold;
   color: @text-color;
 }
 .widget-title > button {
   font-size: initial;
+  font-weight: bold;
   color: #282828;
   text-shadow: none;
   background-color: #689d6a;
