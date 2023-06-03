@@ -94,7 +94,7 @@ nerd_font="JetBrainsMono"
 mkdir -p $HOME/.fonts
 cd $HOME/.fonts
 
-wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v2.3.3/${nerd_font}.zip"
+wget "https://github.com/ryanoasis/nerd-fonts/releases/download/v3.0.1/${nerd_font}.zip"
 
 unzip "${nerd_font}.zip"
 

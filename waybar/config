@@ -7,8 +7,12 @@
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces"],
     //"modules-center": ["hyprland/window"],
-    "modules-right": ["tray", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
+    "modules-right": ["custom/swaync", "tray", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock"],
     // Modules configuration
+    "custom/swaync": {
+	"format": " ",
+	"on-click": "swaync-client -t",
+    },
     "wlr/workspaces": {
 	"on-click": "activate",
     },
