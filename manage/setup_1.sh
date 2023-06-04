@@ -101,7 +101,6 @@ unzip "${nerd_font}.zip"
 
 rm OFL.txt
 rm readme.md
-rm .uuid
 rm "${nerd_font}.zip"
 
 fc-cache
