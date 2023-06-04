@@ -12,6 +12,7 @@
     "custom/swaync": {
 	"format": " ",
 	"on-click": "~/.config/hypr/swaync/scripts/tray_waybar.sh",
+	"tooltip": false,
     },
     "wlr/workspaces": {
 	"on-click": "activate",
