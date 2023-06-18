@@ -8,7 +8,7 @@
 window#waybar {
     background-color: #1f2223;
     border-bottom: 8px solid #191c1d;
-    color: #ffffff;
+    color: #ebdbb2;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -357,4 +357,29 @@ label:focus {
 
 #scratchpad.empty {
 	background-color: transparent;
+}
+
+tooltip {
+  background-color: #1f2223;
+  border: none;
+  border-bottom: 8px solid #191c1d;
+  border-radius: 5px;
+}
+
+tooltip decoration {
+  box-shadow: none;
+}
+
+tooltip decoration:backdrop {
+  box-shadow: none;
+}
+
+tooltip label {
+  color: #ebdbb2;
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-size: 16px;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 0px;
+  padding-bottom: 5px;
 }
