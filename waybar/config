@@ -12,6 +12,7 @@
     "custom/powermenu": {
 	"format": " ",
 	"on-click": "~/.config/hypr/waybar/scripts/power_menu.sh",
+    "on-click-right": "~/.config/hypr/waybar/scripts/notify_uptime.sh",
 	"tooltip": false,
     },
     "custom/swaync": {
