@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-left": ["wlr/workspaces", "hyprland/window"],
     //"modules-center": ["hyprland/window"],
-    "modules-right": ["custom/swaync", "tray", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock", "custom/powermenu"],
+    "modules-right": ["custom/swaync", "custom/settings", "tray", "pulseaudio", "cpu", "memory", "backlight", "battery", "battery#bat2", "clock", "custom/powermenu"],
     // Modules configuration
     "custom/powermenu": {
 	"format": " ",
@@ -18,6 +18,11 @@
     "custom/swaync": {
 	"format": " ",
 	"on-click": "~/.config/hypr/swaync/scripts/tray_waybar.sh",
+	"tooltip": false,
+    },
+    "custom/settings": {
+	"format": " ",
+	"on-click": "~/.config/hypr/eww/scripts/settings_waybar",
 	"tooltip": false,
     },
     "wlr/workspaces": {
