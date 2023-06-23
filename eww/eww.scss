@@ -1,6 +1,7 @@
 * {
   all: unset;
-  font: 17px "JetBrainsMono Nerd Font";
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 20px;
   border-radius: 5px;
 }
 
@@ -13,21 +14,30 @@
   border-radius: 0px 0px 0px 10px;
 }
 
-.metric scale trough highlight {
-  all: unset;
-  background-color: #ff0000;
-  color: #000000;
-  border-radius: 10px;
+.settings-button {
+  background-color: #689d6a;
+  border: none;
+  border-bottom: 8px solid #518554;
+  border-radius: 5px;
+  text-shadow: none;
+  box-shadow: none;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
-.metric scale trough {
-  all: unset;
-  background-color: #ff0000;
-  border-radius: 50px;
-  min-height: 3px;
-  min-width: 50px;
-  margin-left: 10px;
-  margin-right: 20px;
+.settings-button label {
+  color: #282828;
+  text-shadow: none;
+  box-shadow: none;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: "JetBrainsMono Nerd Font", monospace;
+}
+
+.settings-spacer {
+  min-height: 50px;
 }
 
 .metric scale trough highlight {
@@ -45,6 +55,8 @@
   min-width: 200px;
   margin-left: -50px;
   margin-right: 0px;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 label {

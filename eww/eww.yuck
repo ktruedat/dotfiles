@@ -1,7 +1,6 @@
-(defpoll brightness
-         :interval "30ms"
-         "scripts/get_brightness"
-)
+(defpoll brightness :interval "30ms" "scripts/get_brightness")
+(defpoll output-volume :interval "30ms" "scripts/get_output_volume")
+(defpoll input-volume :interval "30ms" "scripts/get_input_volume")
 
 
 
@@ -31,17 +30,66 @@
            )
 )
 
+(defwidget output-volume-slider []
+           (metric :label " "
+                   :value output-volume
+                   :onchange "scripts/set_output_volume {}%"
+           )
+)
+
+(defwidget input-volume-slider []
+           (metric :label ""
+                   :value input-volume
+                   :onchange "scripts/set_input_volume {}%"
+           )
+)
+
 (defwidget settings-sliders []
            (box :class "settings-sliders"
                 :orientation "v"
                 :space-evenly false
                 :halign "center"
                 (brightness-slider)
+                (output-volume-slider)
+                (input-volume-slider)
+           )
+)
+
+(defwidget stb [onclick label]
+           (button :class "settings-button"
+                   :onclick onclick
+                   label
+           )
+)
+
+(defwidget update-rice-button []
+           (stb :onclick "scripts/update_rice"
+                :label "Update Rice"
+           )
+)
+
+(defwidget settings-buttons []
+           (box :class "settings-buttons"
+                :orientation "v"
+                :space-evenly false
+                :halign "center"
+                (box :class "sbr-1"
+                     :orientation "h"
+                     :space-evenly true
+                     (update-rice-button)
+                )
+           )
+)
+
+(defwidget settings-spacer []
+           (box :class "settings-spacer"
+                :orientation "v"
+                :space-evenly true
            )
 )
 
 (defwidget settings []
-           (box :space-evenly true
+           (box :space-evenly false
                 :orientation "v"
                 :class "settings"
                 (settings-sliders)
@@ -54,8 +102,8 @@
            :monitor 0
            :geometry (geometry :x "0px"
                                :y "0px"
-                               :width "500px"
-                               :height "500px"
+                               :width "400px"
+                               :height "0px"
                                :anchor "top right"
                      )
            :stacking "fg"
