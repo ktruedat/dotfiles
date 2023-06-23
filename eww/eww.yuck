@@ -1,0 +1,65 @@
+(defpoll brightness
+         :interval "30ms"
+         "scripts/get_brightness"
+)
+
+
+
+(defwidget metric [label value ?onchange ?onclick]
+           (box :orientation "h"
+                :class "metric"
+                :space-evenly true
+                (box :class "metric-label"
+                     (button :onclick onclick
+                             :class "metric-label-text"
+                             label
+                     )
+                     (scale :min 0
+                            :max 101
+                            :active {onchange != ""}
+                            :value value
+                            :onchange onchange
+                     )
+                )
+           )
+)
+
+(defwidget brightness-slider []
+           (metric :label "󰃠 "
+                   :value brightness
+                   :onchange "scripts/set_brightness {}%"
+           )
+)
+
+(defwidget settings-sliders []
+           (box :class "settings-sliders"
+                :orientation "v"
+                :space-evenly false
+                :halign "center"
+                (brightness-slider)
+           )
+)
+
+(defwidget settings []
+           (box :space-evenly true
+                :orientation "v"
+                :class "settings"
+                (settings-sliders)
+           )
+)
+
+
+
+(defwindow settings
+           :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "500px"
+                               :height "500px"
+                               :anchor "top right"
+                     )
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+           (settings)
+)
