@@ -72,6 +72,10 @@ label {
   font-family: bold;
 }
 
+.metric label {
+  min-width: 40px;
+}
+
 .metric-label {
   margin-left: -90px;
 }
@@ -131,8 +135,16 @@ label {
   padding: 0px;
 }
 
+.powermenu-poweroff-button label {
+  padding-right: 6px;
+}
+
+.powermenu-reboot-button label {
+  padding-left: 8px;
+}
+
 .powermenu-spacer-v {
-  min-height: 50px;
+  min-height: 20px;
 }
 
 .powermenu-button-spacer {

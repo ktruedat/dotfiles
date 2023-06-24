@@ -13,6 +13,7 @@
                 (box :class "metric-label"
                      (button :onclick onclick
                              :class "metric-label-text"
+                             :halign "center"
                              label
                      )
                      (scale :min 0
@@ -122,8 +123,8 @@
            )
 )
 
-(defwidget powermenu-button [label onclick]
-           (button :class "powermenu-button"
+(defwidget powermenu-button [label onclick ?class]
+           (button :class "powermenu-button ${class}"
                    :onclick onclick
                    label
            )
@@ -132,18 +133,28 @@
 (defwidget powermenu-lockscreen-button []
           (powermenu-button :label ""
                             :onclick "scripts/lockscreen"
+                            :class "powermenu-lockscreen-button"
+          )
+)
+
+(defwidget powermenu-logout-button []
+          (powermenu-button :label "󰍃"
+                            :onclick "scripts/logout"
+                            :class "powermenu-logout-button"
           )
 )
 
 (defwidget powermenu-poweroff-button []
           (powermenu-button :label ""
                             :onclick "poweroff"
+                            :class "powermenu-poweroff-button"
           )
 )
 
 (defwidget powermenu-reboot-button []
           (powermenu-button :label " "
                             :onclick "reboot"
+                            :class "powermenu-reboot-button"
           )
 )
 
@@ -157,6 +168,7 @@
                      :orientation "h"
                      :class "powermenu-window-button-area"
                      (powermenu-lockscreen-button)
+                     (powermenu-logout-button)
                      (powermenu-poweroff-button)
                      (powermenu-reboot-button)
                 )
@@ -182,7 +194,7 @@
 (defwindow powermenu-window
            :monitor 0
            :geometry (geometry :x "0px"
-                               :y "100px"
+                               :y "10px"
                                :width "500px"
                                :height "0px"
                                :anchor "top center"
