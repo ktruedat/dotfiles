@@ -2,27 +2,27 @@
  * vim: ft=less
 */
 
-@define-color cc-bg #1d2021;
+@define-color cc-bg #232a2e;
 
-@define-color noti-border-color #689d6a;
-@define-color noti-bg #1d2021;
-@define-color noti-bg-darker #1d2021;
-@define-color noti-bg-hover #1d2021;
+@define-color noti-border-color #778f52;
+@define-color noti-bg #232a2e;
+@define-color noti-bg-darker #232a2e;
+@define-color noti-bg-hover #232a2e;
 @define-color noti-bg-focus rgba(0, 0, 0, 0);
-@define-color noti-close-bg #3c3836;
-@define-color noti-close-bg-hover #cc241d;
+@define-color noti-close-bg #e04758;
+@define-color noti-close-bg-hover #ca4853;
 
-@define-color text-color #ebdbb2;
-@define-color text-color-disabled #282828;
+@define-color text-color #d3c6aa;
+@define-color text-color-disabled #2d353b;
 
-@define-color bg-selected #689d6a;
+@define-color bg-selected #ff0000;
 
-@define-color dnd-bg #3c3836;
-@define-color dnd-selected #689d6a;
-@define-color dnd-dot #282828;
+@define-color dnd-bg #191f23;
+@define-color dnd-selected #778f52;
+@define-color dnd-dot #3b4146;
 
-@define-color noti-button #282828;
-@define-color noti-button-hover #3c3836;
+@define-color noti-button #2d353b;
+@define-color noti-button-hover #343f44;
 
 @define-color sep-color transparent;
 
@@ -243,17 +243,17 @@
 .widget-title > button {
   font-size: initial;
   font-weight: bold;
-  color: #282828;
+  color: #2d353b;
   text-shadow: none;
-  background-color: #689d6a;
+  background-color: #778f52;
   border: none;
-  border-bottom: 8px solid #518554;
+  border-bottom: 8px solid #5d743e;
   box-shadow: none;
   border-radius: 5px;
 }
 .widget-title > button:hover {
-  background-color: #8ec07c;
-  border-bottom: 8px solid #76a765;
+  background-color: #92ab6c;
+  border-bottom: 8px solid #788f57;
 }
 
 /* DND widget */
