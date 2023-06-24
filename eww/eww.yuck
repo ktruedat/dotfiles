@@ -3,6 +3,7 @@
 (defpoll output-volume-icon :interval "30ms" "scripts/get_output_volume_icon")
 (defpoll input-volume :interval "30ms" "scripts/get_input_volume")
 (defpoll input-volume-icon :interval "30ms" "scripts/get_input_volume_icon")
+(defpoll uptime :interval "1s" "scripts/get_uptime")
 
 
 
@@ -162,7 +163,7 @@
            (box :space-evenly false
                 :orientation "v"
                 :class "powermenu-window"
-                "Power Menu Options:"
+                uptime
                 (spacer-v-core :class "powermenu-spacer-v")
                 (box :space-evenly true
                      :orientation "h"
