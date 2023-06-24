@@ -2,7 +2,7 @@
 
 source ~/.config/hypr/lib.sh
 
-window=settings
+window="powermenu-window"
 
 current_info=$(eww-rice windows | grep "$window")
 

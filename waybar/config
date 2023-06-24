@@ -11,7 +11,7 @@
     // Modules configuration
     "custom/powermenu": {
 	"format": " ",
-	"on-click": "~/.config/hypr/waybar/scripts/power_menu.sh",
+	"on-click": "~/.config/hypr/eww/scripts/waybar/powermenu",
 	"on-click-right": "~/.config/hypr/waybar/scripts/notify_uptime.sh",
 	"tooltip": false,
     },
@@ -22,7 +22,7 @@
     },
     "custom/settings": {
 	"format": " ",
-	"on-click": "~/.config/hypr/eww/scripts/settings_waybar",
+	"on-click": "~/.config/hypr/eww/scripts/waybar/bar_menu",
 	"tooltip": false,
     },
     "wlr/workspaces": {

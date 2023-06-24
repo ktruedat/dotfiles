@@ -23,6 +23,28 @@
            )
 )
 
+(defwidget spacer-v-core [class]
+           (box :class class
+                :orientation "v"
+                :space-evenly false
+           )
+)
+
+(defwidget spacer-h-core [class]
+           (box :class class
+                :orientation "h"
+                :space-evenly false
+           )
+)
+
+(defwidget spacer-v []
+           (spacer-v-core :class "spacer-v")
+)
+
+(defwidget spacer-h []
+           (spacer-h-core :class "spacer-h")
+)
+
 (defwidget brightness-slider []
            (metric :label "󰃠 "
                    :value brightness
@@ -44,8 +66,8 @@
            )
 )
 
-(defwidget settings-sliders []
-           (box :class "settings-sliders"
+(defwidget bar-menu-sliders []
+           (box :class "bar-menu-sliders"
                 :orientation "v"
                 :space-evenly false
                 :halign "center"
@@ -55,21 +77,21 @@
            )
 )
 
-(defwidget stb [onclick label]
-           (button :class "settings-button"
+(defwidget bmb [onclick label]
+           (button :class "bar-menu-button"
                    :onclick onclick
                    label
            )
 )
 
 (defwidget update-rice-button []
-           (stb :onclick "scripts/update_rice"
+           (bmb :onclick "scripts/update_rice"
                 :label "Update Rice"
            )
 )
 
-(defwidget settings-buttons []
-           (box :class "settings-buttons"
+(defwidget bar-menu-buttons []
+           (box :class "bar-menu-buttons"
                 :orientation "v"
                 :space-evenly false
                 :halign "center"
@@ -81,24 +103,65 @@
            )
 )
 
-(defwidget settings-spacer []
-           (box :class "settings-spacer"
+(defwidget bar-menu-spacer []
+           (box :class "bar-menu-spacer"
                 :orientation "v"
                 :space-evenly true
            )
 )
 
-(defwidget settings []
+(defwidget bar-menu []
            (box :space-evenly false
                 :orientation "v"
-                :class "settings"
-                (settings-sliders)
+                :class "bar-menu"
+                (bar-menu-sliders)
+           )
+)
+
+(defwidget powermenu-button [label onclick]
+           (button :class "powermenu-button"
+                   :onclick onclick
+                   label
+           )
+)
+
+(defwidget powermenu-lockscreen-button []
+          (powermenu-button :label ""
+                            :onclick "scripts/lockscreen"
+          )
+)
+
+(defwidget powermenu-poweroff-button []
+          (powermenu-button :label ""
+                            :onclick "poweroff"
+          )
+)
+
+(defwidget powermenu-reboot-button []
+          (powermenu-button :label " "
+                            :onclick "reboot"
+          )
+)
+
+(defwidget powermenu-window []
+           (box :space-evenly false
+                :orientation "v"
+                :class "powermenu-window"
+                "Power Menu Options:"
+                (spacer-v-core :class "powermenu-spacer-v")
+                (box :space-evenly true
+                     :orientation "h"
+                     :class "powermenu-window-button-area"
+                     (powermenu-lockscreen-button)
+                     (powermenu-poweroff-button)
+                     (powermenu-reboot-button)
+                )
            )
 )
 
 
 
-(defwindow settings
+(defwindow bar-menu
            :monitor 0
            :geometry (geometry :x "0px"
                                :y "0px"
@@ -109,5 +172,19 @@
            :stacking "fg"
            :windowtype "normal"
            :wm-ignore true
-           (settings)
+           (bar-menu)
+)
+
+(defwindow powermenu-window
+           :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "100px"
+                               :width "500px"
+                               :height "0px"
+                               :anchor "top center"
+                     )
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+           (powermenu-window)
 )
