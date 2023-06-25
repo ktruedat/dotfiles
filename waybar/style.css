@@ -378,9 +378,9 @@ label:focus {
 }
 
 tooltip {
-  background-color: #1f2223;
+  background-color: #232a2e;
   border: none;
-  border-bottom: 8px solid #191c1d;
+  border-bottom: 8px solid #1d2327;
   border-radius: 5px;
 }
 
@@ -393,7 +393,7 @@ tooltip decoration:backdrop {
 }
 
 tooltip label {
-  color: #ebdbb2;
+  color: #d3c6aa;
   font-family: JetBrainsMono Nerd Font, monospace;
   font-size: 16px;
   padding-left: 5px;
