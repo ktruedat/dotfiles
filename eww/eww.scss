@@ -13,6 +13,44 @@
   min-width: 10px;
 }
 
+.window-module {
+  background-color: #2d353b;
+  border: none;
+  border-bottom: 8px solid #252c32;
+  border-radius: 5px;
+  margin-bottom: -6px;
+  margin-left: 12px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.window-module label {
+  color: #d3c6aa;
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.workspace-button {
+  background-color: #778f52;
+  border: none;
+  border-bottom: 8px solid #5d743e;
+  border-radius: 5px;
+  margin-left: 4px;
+  margin-bottom: -6px;
+  padding-left: 14px;
+  padding-right: 14px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.workspace-button label {
+  color: #2d353b;
+  font-family: JetBrainsMono Nerd Font, sans-sherif;
+  font-weight: bold;
+  font-size: 14px;
+}
+
 .bar {
   background-color: #232a2e;
   border-bottom: 8px solid #1d2327;

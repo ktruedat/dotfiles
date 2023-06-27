@@ -4,6 +4,8 @@
 (defpoll input-volume :interval "30ms" "scripts/get_input_volume")
 (defpoll input-volume-icon :interval "30ms" "scripts/get_input_volume_icon")
 (defpoll uptime :interval "1s" "scripts/get_uptime")
+(defpoll workspaces-json :interval "30ms" "scripts/bar/get_workspaces")
+(defpoll window-title :interval "30ms" "scripts/bar/get_window")
 
 
 
@@ -176,9 +178,62 @@
            )
 )
 
+(defwidget workspaces-module []
+           (box :class "workspaces-module"
+                :orientation "h"
+                :space-evenly false
+                (for i in workspaces-json
+                          (button :onclick "hyprctl dispatch workspace ${i}"
+                                  :class "workspace-button"
+                                  "${i}"
+                          )
+                )
+           )
+)
 
+(defwidget window-module []
+           (box :class "window-module"
+                :orientation "h"
+                :space-evenly false
+                window-title
+           )
+)
 
-(include "./src/yuck/bar.yuck")
+(defwidget bar-modules-left []
+           (box :class "bar-modules-left"
+                :orientation "h"
+                :space-evenly false
+                :halign "start"
+                (workspaces-module)
+                (window-module)
+           )
+)
+
+(defwidget bar-modules-center []
+           (box :class "bar-modules-center"
+                :orientation "h"
+                :space-evenly false
+                :halign "center"
+           )
+)
+
+(defwidget bar-modules-right []
+           (box :class "bar-modules-right"
+                :orientation "h"
+                :space-evenly false
+                :halign "end"
+           )
+)
+
+(defwidget bar []
+           (box :class "bar"
+                :orientation "h"
+                :space-evenly false
+                (bar-modules-left)
+                (bar-modules-center)
+                (bar-modules-right)
+           )
+)
 
 
 
@@ -218,7 +273,7 @@
                                :height "41px"
                                :anchor "top center"
                      )
-           :stacking "overlay"
+           :stacking "fg"
            :windowtype "dock"
            :wm-ignore false
            :exclusive true
