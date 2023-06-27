@@ -14,7 +14,7 @@
 }
 
 .window-module {
-  background-color: #2d353b;
+  background-color: #282828;
   border: none;
   border-bottom: 8px solid #252c32;
   border-radius: 5px;
@@ -25,16 +25,16 @@
 }
 
 .window-module label {
-  color: #d3c6aa;
+  color: #ebdbb2;
   font-family: JetBrainsMono Nerd Font, monospace;
   font-size: 15px;
   font-weight: bold;
 }
 
 .workspace-button {
-  background-color: #778f52;
+  background-color: #689d6a;
   border: none;
-  border-bottom: 8px solid #5d743e;
+  border-bottom: 8px solid #518554;
   border-radius: 5px;
   margin-left: 4px;
   margin-bottom: -6px;
@@ -45,32 +45,32 @@
 }
 
 .workspace-button label {
-  color: #2d353b;
+  color: #282828;
   font-family: JetBrainsMono Nerd Font, sans-sherif;
   font-weight: bold;
   font-size: 14px;
 }
 
 .bar {
-  background-color: #232a2e;
-  border-bottom: 8px solid #1d2327;
-  color: #d3c6aa;
+  background-color: #1f2223;
+  border-bottom: 8px solid #191c1d;
+  color: #ebdbb2;
   border-radius: 0px;
 }
 
 .bar-menu {
-  background-color: #232a2e;
+  background-color: #1f2223;
   border: none;
-  border-bottom: 8px solid #1d2327;
-  color: #d3c6aa;
+  border-bottom: 8px solid #191c1d;
+  color: #ebdbb2;
   padding: 20px;
   border-radius: 0px 0px 0px 10px;
 }
 
 .bar-menu-button {
-  background-color: #778f52;
+  background-color: #689d6a;
   border: none;
-  border-bottom: 8px solid #5d743e;
+  border-bottom: 8px solid #518554;
   border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
@@ -81,7 +81,7 @@
 }
 
 .bar-menu-button label {
-  color: #2d353b;
+  color: #282828;
   text-shadow: none;
   box-shadow: none;
   font-weight: bold;
@@ -95,14 +95,14 @@
 
 .metric scale trough highlight {
   all: unset;
-  background-color: #778f52;
+  background-color: #689d6a;
   color: #000000;
   border-radius: 50px;
 }
 
 .metric scale trough {
   all: unset;
-  background-color: #191f23;
+  background-color: #3c3836;
   border-radius: 50px;
   min-height: 18px;
   min-width: 200px;
@@ -113,7 +113,7 @@
 }
 
 label {
-  color: #d3c6aa;
+  color: #ebdbb2;
   font-family: bold;
 }
 
@@ -127,14 +127,14 @@ label {
 
 .metric-label-text label {
   font-size: 28px;
-  color: #849c5e;
+  color: #8ec07c;
 }
 
 .powermenu-window {
-  background-color: #232a2e;
+  background-color: #1f2223;
   border: none;
-  border-bottom: 8px solid #1d2327;
-  color: #d3c6aa;
+  border-bottom: 8px solid #191c1d;
+  color: #ebdbb2;
   padding: 20px;
   border-radius: 10px;
 }
@@ -143,10 +143,10 @@ label {
   font-family: JetBrainsMono Nerd Font, monospace;
   font-weight: bold;
   font-size: 22px;
-  color: #d3c6aa;
-  background-color: #343f44;
+  color: #ebdbb2;
+  background-color: #303030;
   border: none;
-  border-bottom: 8px solid #2b3539;
+  border-bottom: 8px solid #272727;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-right: 4px;
@@ -154,9 +154,9 @@ label {
 }
 
 .powermenu-button {
-  background-color: #ee606a;
+  background-color: #e23c2c;
   border: none;
-  border-bottom: 8px solid #ca4853;
+  border-bottom: 8px solid #cc241d;
   border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
@@ -169,7 +169,7 @@ label {
 }
 
 .powermenu-button label {
-  color: #2d353b;
+  color: #282828;
   text-shadow: none;
   box-shadow: none;
   font-weight: bold;
