@@ -25,3 +25,4 @@ xcursor-simp1e-gruvbox-light
 gtklock
 eww-wayland
 git
+xdg-desktop-portal-hyprland
