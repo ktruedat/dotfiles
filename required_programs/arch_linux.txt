@@ -3,7 +3,7 @@ hyprland
 waybar-hyprland-git
 alacritty
 rofi-lbonn-wayland
-swaybg
+swww
 libnotify
 notification-daemon
 swaync
