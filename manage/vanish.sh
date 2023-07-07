@@ -1,4 +1,6 @@
-#!/bin/bash
+#!/usr/bin/env bash
+
+# Your dad left with the milk, btw.
 
 configs=(
     "Hyprland" "$HOME/.config/hypr"

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 configs=(
     "Hyprland Rice" "$HOME/.config" "hypr" "https://codeberg.org/Oglo12/hyprland-rice.git"

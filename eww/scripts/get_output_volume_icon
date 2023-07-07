@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 vlevel=$(./scripts/get_output_volume)
 
