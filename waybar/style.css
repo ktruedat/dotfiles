@@ -3,6 +3,7 @@
     font-family: JetBrainsMono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
+    all: unset;
 }
 
 window#waybar {
@@ -45,6 +46,9 @@ button {
     margin-bottom: 2px;
     font-family: JetBrainsMono Nerd Font, sans-sherif;
     font-weight: bold;
+    font-size: 14px;
+    padding-left: 14px;
+    padding-right: 14px;
 }
 
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */

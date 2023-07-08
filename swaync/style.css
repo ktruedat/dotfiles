@@ -29,6 +29,7 @@
 * {
   font-family: "JetBrainsMono Nerd Font", sans-serif;
   font-size: 20px;
+  all: unset;
 }
 
 .notification-row {
@@ -241,7 +242,7 @@
   color: @text-color;
 }
 .widget-title > button {
-  font-size: initial;
+  font-size: 20px;
   font-weight: bold;
   color: #282828;
   text-shadow: none;
@@ -250,6 +251,10 @@
   border-bottom: 8px solid #518554;
   box-shadow: none;
   border-radius: 5px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 .widget-title > button:hover {
   background-color: #8ec07c;
@@ -275,6 +280,10 @@
 .widget-dnd > switch slider {
   background: @dnd-dot;
   border-radius: 100px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  margin-left: -1px;
+  margin-right: -1px;
 }
 
 /* Label widget */
