@@ -27,9 +27,9 @@
 @define-color sep-color transparent;
 
 * {
-  font-family: "JetBrainsMono Nerd Font", sans-serif;
-  font-size: 20px;
   all: unset;
+  font-family: JetBrainsMono Nerd Font, monospace;
+  font-size: 20px;
 }
 
 .notification-row {
