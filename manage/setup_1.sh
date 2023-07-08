@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 configs=(
-    "Hyprland Rice" "$HOME/.config" "hypr" "https://codeberg.org/Oglo12/hyprland-rice.git"
-    "Alacritty" "$HOME/.config" "alacritty" "https://codeberg.org/Oglo12/hyprland-alacritty.git"
-    "Rofi" "$HOME/.config" "rofi" "https://codeberg.org/Oglo12/hyprland-rofi.git"
+    "Hyprland Rice" "$HOME/.config" "hypr" "https://gitlab.com/Oglo12/hyprland-rice.git"
+    "Alacritty" "$HOME/.config" "alacritty" "https://gitlab.com/Oglo12/hyprland-alacritty.git"
+    "Rofi" "$HOME/.config" "rofi" "https://gitlab.com/Oglo12/hyprland-rofi.git"
 )
 
 for u in $(seq 0 $((${#configs[@]} / 3))); do
