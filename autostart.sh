@@ -23,4 +23,6 @@ lxsession &
 
 brightnessctl --restore
 
+eval "sleep 2; hyprctl reload" &
+
 run_hook post &
