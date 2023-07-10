@@ -47,8 +47,9 @@ button {
     font-family: JetBrainsMono Nerd Font, sans-sherif;
     font-weight: bold;
     font-size: 14px;
-    padding-left: 14px;
-    padding-right: 14px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: transform 0.1s ease-in-out;
 }
 
 button:hover {
@@ -58,7 +59,9 @@ button:hover {
 }
 
 button.active {
-    border-bottom: 6px solid #518554;
+    background: inherit;
+    background-color: #5b905e;
+    border-bottom: 8px solid #447848;
 }
 
 #mode {
