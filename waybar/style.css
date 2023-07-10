@@ -60,8 +60,8 @@ button:hover {
 
 button.active {
     background: inherit;
-    background-color: #5b905e;
-    border-bottom: 8px solid #447848;
+    background-color: #7db37e;
+    border-bottom: 8px solid #659a68;
 }
 
 #mode {
