@@ -1,9 +1,7 @@
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
     font-family: JetBrainsMono Nerd Font, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
     font-size: 14px;
     font-weight: bold;
-    all: unset;
 }
 
 window#waybar {
@@ -37,6 +35,7 @@ window#waybar.chromium {
 }
 
 button {
+    all: unset;
     background-color: #689d6a;
     color: #282828;
     border: none;
