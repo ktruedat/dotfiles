@@ -8,6 +8,9 @@ source ~/.config/hypr/lib.sh
 
 run_hook pre &
 
+killall flameshot
+pkill flameshot
+
 swww init
 
 set_wallpaper ~/.config/hypr/wallpaper.png
