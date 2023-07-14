@@ -46,6 +46,11 @@
   margin: 6px 12px;
   box-shadow: none;
   padding: 0;
+  min-height: 100px;
+}
+
+.notification label {
+  padding-left: 10px;
 }
 
 .low,
