@@ -239,8 +239,8 @@
 
 (defwindow bar-menu
            :monitor 0
-           :geometry (geometry :x "10px"
-                               :y "10px"
+           :geometry (geometry :x "0px"
+                               :y "0px"
                                :width "400px"
                                :height "0px"
                                :anchor "top right"
