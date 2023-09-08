@@ -2,7 +2,7 @@
   all: unset;
   font-family: "JetBrainsMono Nerd Font", sans-serif;
   font-size: 20px;
-  border-radius: 2px;
+  border-radius: 5px;
 }
 
 .spacer-v {
@@ -59,28 +59,29 @@
 }
 
 .bar-menu {
-  background-color: #1d2021;
+  background-color: #1f2223;
   border: none;
+  border-bottom: 8px solid #191c1d;
   color: #ebdbb2;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 0px 0px 0px 10px;
 }
 
 .bar-menu-button {
   background-color: #689d6a;
   border: none;
-  border-radius: 2px;
+  border-bottom: 8px solid #518554;
+  border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
   padding-left: 10px;
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
-  margin: 4px;
 }
 
 .bar-menu-button label {
-  color: #1d2021;
+  color: #282828;
   text-shadow: none;
   box-shadow: none;
   font-weight: bold;
@@ -96,15 +97,13 @@
   all: unset;
   background-color: #689d6a;
   color: #000000;
-  border-radius: 2px;
-  /* margin: 4px; */
-  /* min-height: 16px; */
+  border-radius: 50px;
 }
 
 .metric scale trough {
   all: unset;
   background-color: #3c3836;
-  border-radius: 2px;
+  border-radius: 50px;
   min-height: 18px;
   min-width: 200px;
   margin-left: -50px;
@@ -128,15 +127,16 @@ label {
 
 .metric-label-text label {
   font-size: 28px;
-  color: #689d6a;
+  color: #8ec07c;
 }
 
 .powermenu-window {
-  background-color: #1d2021;
+  background-color: #1f2223;
   border: none;
+  border-bottom: 8px solid #191c1d;
   color: #ebdbb2;
   padding: 20px;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .powermenu-window label {
@@ -144,8 +144,9 @@ label {
   font-weight: bold;
   font-size: 22px;
   color: #ebdbb2;
-  background-color: #32302f;
+  background-color: #303030;
   border: none;
+  border-bottom: 8px solid #272727;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-right: 4px;
@@ -155,7 +156,8 @@ label {
 .powermenu-button {
   background-color: #e23c2c;
   border: none;
-  border-radius: 2px;
+  border-bottom: 8px solid #cc241d;
+  border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
   padding-left: 10px;
@@ -167,7 +169,7 @@ label {
 }
 
 .powermenu-button label {
-  color: #1d2021;
+  color: #282828;
   text-shadow: none;
   box-shadow: none;
   font-weight: bold;

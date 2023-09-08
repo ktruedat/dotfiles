@@ -42,7 +42,7 @@
 }
 
 .notification {
-  border-radius: 6px;
+  border-radius: 10px;
   margin: 6px 12px;
   box-shadow: none;
   padding: 0;
@@ -50,7 +50,7 @@
 }
 
 .notification label {
-  padding-left: 6px;
+  padding-left: 10px;
 }
 
 .low,
@@ -58,20 +58,20 @@
   background-color: @noti-border-color;
   padding: 4px 4px 4px 4px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .critical {
   background-color: #cc241d;
   padding: 4px 4px 4px 4px;
   border: none;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .notification-content {
   background: transparent;
   padding: 10px;
-  border-radius: 6px;
+  border-radius: 10px;
 }
 
 .close-button {
@@ -79,7 +79,7 @@
   color: @text-color;
   text-shadow: none;
   padding: 0;
-  border-radius: 2px;
+  border-radius: 100%;
   margin-top: 12px;
   margin-right: 16px;
   box-shadow: none;
@@ -127,7 +127,7 @@
 }
 
 .notification-default-action {
-  border-radius: 3px;
+  border-radius: 8px;
 }
 
 /* When alternative actions are visible */
@@ -218,8 +218,6 @@
   padding-top: 5px;
   padding-left: 10px;
   padding-right: 9px;
-  margin: 4px;
-  border-radius: 3px;
 }
 
 .control-center-list {
@@ -251,19 +249,21 @@
 .widget-title > button {
   font-size: 20px;
   font-weight: bold;
-  color: #1d2021;
+  color: #282828;
   text-shadow: none;
   background-color: #689d6a;
   border: none;
+  border-bottom: 8px solid #518554;
   box-shadow: none;
-  border-radius: 2px;
+  border-radius: 5px;
   padding-left: 15px;
   padding-right: 15px;
   padding-top: 5px;
-  padding-bottom: 6px;
+  padding-bottom: 5px;
 }
 .widget-title > button:hover {
   background-color: #8ec07c;
+  border-bottom: 8px solid #76a765;
 }
 
 /* DND widget */
@@ -274,7 +274,7 @@
 }
 .widget-dnd > switch {
   font-size: initial;
-  border-radius: 2px;
+  border-radius: 100px;
   background: @dnd-bg;
   border: none;
   box-shadow: none;
@@ -286,12 +286,12 @@
 }
 .widget-dnd > switch slider {
   background: @dnd-dot;
-  border-radius: 2px;
+  border-radius: 100px;
   padding-top: 0px;
   padding-bottom: 0px;
-  min-height: 18px;
-  min-width: 20px;
-  margin: 4px;
+  min-height: 28px;
+  min-width: 30px;
+  margin: 0px;
 }
 
 /* Label widget */
