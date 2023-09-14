@@ -109,6 +109,8 @@
         // "device": "acpi_video1",
         "format": "{percent}% {icon}",
         "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip-format": "Left click to save brightness.",
+        "on-click": "brightnessctl --save",
     },
     "battery": {
         "states": {
