@@ -17,6 +17,7 @@
     "custom/swaync": {
 	"format": " ",
 	"on-click": "~/.config/hypr/swaync/scripts/tray_waybar.sh",
+    "on-click-right": "swaync-client -C",
 	"tooltip": false,
     },
     "custom/menu": {
