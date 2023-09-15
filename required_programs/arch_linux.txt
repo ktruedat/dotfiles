@@ -1,8 +1,8 @@
 cliphist
 hyprland
-waybar-hyprland-git
+waybar
 alacritty
-rofi-lbonn-wayland
+rofi-lbonn-wayland-git
 swww
 libnotify
 notification-daemon
