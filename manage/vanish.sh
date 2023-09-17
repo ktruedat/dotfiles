@@ -5,6 +5,7 @@
 configs=(
     "Hyprland" "$HOME/.config/hypr"
     "Alacritty" "$HOME/.config/alacritty"
+    "Kitty" "$HOME/.config/kitty"
     "Rofi" "$HOME/.config/rofi"
 )
 

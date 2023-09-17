@@ -3,6 +3,7 @@
 configs=(
     "Hyprland Rice" "$HOME/.config" "hypr" "https://gitlab.com/Oglo12/hyprland-rice.git"
     "Alacritty" "$HOME/.config" "alacritty" "https://gitlab.com/Oglo12/hyprland-alacritty.git"
+    "Kitty" "$HOME/.config" "kitty" "https://gitlab.com/Oglo12/hyprland-kitty.git"
     "Rofi" "$HOME/.config" "rofi" "https://gitlab.com/Oglo12/hyprland-rofi.git"
 )
 

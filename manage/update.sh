@@ -30,6 +30,7 @@ add_conf () {
 
 add_conf "$HOME/.config/hypr/" "Hyprland" "origin" "main"
 add_conf "$HOME/.config/alacritty/" "Alacritty" "origin" "main"
+add_conf "$HOME/.config/kitty/" "Kitty" "origin" "main"
 add_conf "$HOME/.config/rofi/" "Rofi" "origin" "main"
 
 for u in $(seq 0 $((${#configs[@]} / 3)))
