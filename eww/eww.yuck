@@ -6,6 +6,7 @@
 (defpoll uptime :interval "1s" "scripts/get_uptime")
 (defpoll workspaces-json :interval "30ms" "scripts/bar/get_workspaces")
 (defpoll window-title :interval "30ms" "scripts/bar/get_window")
+(defpoll keybinds :interval "500s" "scripts/get_keybinds")
 
 
 
@@ -235,7 +236,60 @@
            )
 )
 
+(defwidget close-button [onclick]
+           (button :class "close-button"
+                   :onclick onclick
+                   ""
+           )
+)
 
+(defwidget titlebar [?title close-button-onclick]
+           (box :class "titlebar"
+                :orientation "h"
+                :space-evenly true
+                (box :class "titlebar-title"
+                     :orientation "h"
+                     :space-evenly false
+                     :halign "start"
+                     title
+                )
+                (box :class "titlebar-buttons-box"
+                     :orientation "h"
+                     :space-evenly false
+                     :halign "end"
+                     (close-button :onclick "${close-button-onclick}")
+                )
+           )
+)
+
+(defwidget keybinds []
+           (box :class "keybinds-parent-box"
+                :orientation "v"
+                :space-evenly false
+                (titlebar :title "Keybinds Guide" :close-button-onclick "scripts/self close keybinds")
+                (scroll :class "keybinds"
+                        :orientation "v"
+                        :space-evenly false
+                        keybinds
+                )
+           )
+)
+
+
+
+(defwindow keybinds
+           :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "75%"
+                               :height "0px"
+                               :anchor "center"
+                     )
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+           (keybinds)
+)
 
 (defwindow bar-menu
            :monitor 0
