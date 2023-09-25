@@ -275,7 +275,29 @@
            )
 )
 
+(defwidget rice-update-available []
+           (box :class "rice-update-available"
+                :orientation "h"
+                :space-evenly false
+                "Rice Update Available"
+           )
+)
 
+
+
+(defwindow rice-update-available
+           :monitor 0
+           :geometry (geometry :x "10px"
+                               :y "10px"
+                               :width "100px"
+                               :height "20px"
+                               :anchor "top right"
+           )
+           :stacking "bg"
+           :windowtype "normal"
+           :wm-ignore true
+           (rice-update-available)
+)
 
 (defwindow keybinds
            :monitor 0
