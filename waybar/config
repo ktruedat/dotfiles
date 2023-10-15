@@ -112,6 +112,7 @@
         "format-icons": ["", "", "", "", "", "", "", "", ""],
         "tooltip-format": "Left click to save brightness.",
 	    "on-click": "~/.config/hypr/waybar/scripts/save_brightness.sh",
+	    "on-click-right": "~/.config/hypr/waybar/scripts/load_brightness.sh",
     },
     "battery": {
         "states": {
