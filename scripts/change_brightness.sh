@@ -20,5 +20,3 @@ elif [[ $b_mode == "down" ]]; then
 else
   notify-send "Hyprland Script (Brightness)" "You seem to be using this script wrong somewhere in your configuration!" -u critical
 fi
-
-brightnessctl --save
