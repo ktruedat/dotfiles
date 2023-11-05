@@ -1,0 +1,55 @@
+window:
+  padding:
+    x: 9
+    y: 9
+  class:
+    instance: Alacritty
+    general: Alacritty
+  opacity: 0.92
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+
+font:
+  normal:
+    family: JetBrainsMono Nerd Font
+    style:  Medium
+  bold:
+    family: JetBrainsMono Nerd Font
+    style:  Bold
+  italic:
+    family: JetBrainsMono Nerd Font
+    style:  MediumItalic
+  bold_italic:
+    family: JetBrainsMono Nerd Font
+    style: BoldItalic
+  size: 16
+draw_bold_text_with_bright_colors: true
+
+colors:
+  primary:
+    background: "${background}"
+    foreground: "${foreground}"
+  normal:
+    black: "${terminal-black}"
+    red: "${terminal-red}"
+    green: "${terminal-green}"
+    yellow: "${terminal-yellow}"
+    blue: "${terminal-blue}"
+    magenta: "${terminal-magenta}"
+    cyan: "${terminal-cyan}"
+    white: "${terminal-white}"
+  bright:
+    black: "${terminal-black-bright}"
+    red: "${terminal-red-bright}"
+    green: "${terminal-green-bright}"
+    yellow: "${terminal-yellow-bright}"
+    blue: "${terminal-blue-bright}"
+    magenta: "${terminal-magenta-bright}"
+    cyan: "${terminal-cyan-bright}"
+    white: "${terminal-white-bright}"
+
+selection:
+  save_to_clipboard: false
