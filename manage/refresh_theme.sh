@@ -13,16 +13,16 @@ template_files=(
 arg_1="$1"
 arg_2="$2"
 
-theme_file () {
-  if [[ -f ~/.cache/hyprland_rice/theme.txt ]]; then
-    echo "$HOME/.cache/hyprland_rice/theme.txt"
+theme_path () {
+  if [[ -d ~/.cache/hyprland_rice/theme ]]; then
+    echo "$HOME/.cache/hyprland_rice/theme"
   else
-    echo "$HOME/.config/hypr/themes/gruvbox_dark.txt"
+    echo "$HOME/.config/hypr/themes/gruvbox_dark"
   fi
 }
 
 get_color () {
-  theme_data="$(cat $(theme_file))"
+  theme_data="$(cat $(theme_path)/theme.txt)"
 
   echo $theme_data | sed 's/;/\n/g' | grep "\$$1 ->" | sed 's/ -> /:/g' | cut -f2 -d ":"
 }
@@ -34,7 +34,7 @@ translate_file () {
 
   cat $HOME/.config/hypr/templates/$1 > $2
 
-  color_keys=$(cat $(theme_file) | sed 's/;/\n/g' | sed 's/\$//g' | sed 's/ -> /:/g' | cut -f1 -d ":")
+  color_keys=$(cat $(theme_path)/theme.txt | sed 's/;/\n/g' | sed 's/\$//g' | sed 's/ -> /:/g' | cut -f1 -d ":")
 
   s_left=""
   s_right=""

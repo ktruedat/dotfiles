@@ -18,12 +18,12 @@ key_to_value () {
 
 chosen_theme="$(cat $HOME/.hyprland_rice/themes.txt | sed 's/ -> /\$/g' | cut -f1 -d "\$" | rofi -dmenu -p "Choose Theme:")"
 
-theme_file=$(key_to_value "$chosen_theme")
+theme_path=$(key_to_value "$chosen_theme")
 
 notify-send "Theme Chooser" "Setting theme... please wait..."
 
-rm ~/.cache/hyprland_rice/theme.txt > /dev/null 2>&1
-cp $theme_file ~/.cache/hyprland_rice/theme.txt
+rm -rf ~/.cache/hyprland_rice/theme > /dev/null 2>&1
+cp -r $(readlink -f $theme_path) ~/.cache/hyprland_rice/theme
 
 ~/.config/hypr/manage/refresh_theme.sh
 ~/.config/hypr/scripts/refresh_after_theme_change.sh
