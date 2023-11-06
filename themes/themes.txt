@@ -1,1 +1,2 @@
 $Gruvbox Dark (Default, Built-In) -> ~/.config/hypr/themes/gruvbox_dark;
+$Silk Dark (Built-In) -> ~/.config/hypr/themes/silk_dark;

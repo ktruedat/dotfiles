@@ -7,6 +7,8 @@ $background3 -> #303030;
 $background3-bottom -> #272727;
 $background4 -> #282828;
 $background4-bottom -> #252c32;
+$window-border -> #689d6a;
+$window-border-inactive -> #1d2021;
 $close-button -> #e23c2c;
 $close-button-bottom -> #cc241d;
 $close-button-foreground -> #282828;

@@ -3,6 +3,7 @@
 mkdir ~/.cache/hyprland_rice > /dev/null 2>&1
 
 template_files=(
+  "$HOME/.config/hypr/templates/colors.conf : $HOME/.config/hypr/colors.conf : hyprland-conf"
   "$HOME/.config/hypr/templates/eww.scss : $HOME/.config/hypr/eww/eww.scss : scss"
   "$HOME/.config/hypr/templates/waybar.css : $HOME/.config/hypr/waybar/style.css : css"
   "$HOME/.config/hypr/templates/swaync.css : $HOME/.config/hypr/swaync/style.css : css"
@@ -19,7 +20,19 @@ theme_path () {
 get_color () {
   theme_data="$(cat $(theme_path)/theme.txt)"
 
-  echo $theme_data | sed 's/;/\n/g' | grep "\$$1 ->" | sed 's/ -> /:/g' | cut -f2 -d ":"
+  ignore_char=""
+
+  if [[ "$2" == "hyprland-conf" ]]; then
+    ignore_char='#'
+  fi
+
+  final_color=$(echo $theme_data | sed 's/;/\n/g' | grep "\$$1 ->" | sed 's/ -> /:/g' | cut -f2 -d ":")
+
+  if [[ "$ignore_char" == "" ]]; then
+    echo $final_color
+  else
+    echo $final_color | sed "s/${ignore_char}//g"
+  fi
 }
 
 translate_file () {
@@ -44,12 +57,15 @@ translate_file () {
   elif [[ "$3" == "rasi" ]]; then
     s_left='${'
     s_right='}'
+  elif [[ "$3" == "hyprland-conf" ]]; then
+    s_left='%{'
+    s_right='}'
   fi
 
   for i in ${color_keys[@]}; do
     rm ~/.cache/hyprland_rice/temp_store > /dev/null 2>&1
 
-    cat ~/.cache/hyprland_rice/translate_file_tmp | sed "s/${s_left}--${i}--${s_right}/$(get_color $i)/g" > ~/.cache/hyprland_rice/temp_store
+    cat ~/.cache/hyprland_rice/translate_file_tmp | sed "s/${s_left}--${i}--${s_right}/$(get_color $i $3)/g" > ~/.cache/hyprland_rice/temp_store
     rm ~/.cache/hyprland_rice/translate_file_tmp
     cat ~/.cache/hyprland_rice/temp_store > ~/.cache/hyprland_rice/translate_file_tmp
 
