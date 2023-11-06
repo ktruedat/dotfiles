@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 mkdir ~/.cache/hyprland_rice > /dev/null 2>&1
+mkdir ~/.cache/hyprland_rice/translated > /dev/null 2>&1
 
 template_files=(
+  "$HOME/.config/hypr/templates/colors.conf : $HOME/.config/hypr/colors.conf : hyprland-conf"
   "$HOME/.config/hypr/templates/eww.scss : $HOME/.config/hypr/eww/eww.scss : scss"
   "$HOME/.config/hypr/templates/waybar.css : $HOME/.config/hypr/waybar/style.css : css"
   "$HOME/.config/hypr/templates/swaync.css : $HOME/.config/hypr/swaync/style.css : css"
   "$HOME/.config/hypr/templates/alacritty.yml : $HOME/.config/alacritty/alacritty.yml : yml"
   "$HOME/.config/hypr/templates/rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
-  "$HOME/.config/hypr/templates/colors.conf : $HOME/.config/hypr/colors.conf : hyprland-conf"
 )
 
 theme_path () {
@@ -37,8 +38,6 @@ get_color () {
 
 translate_file () {
   echo "Template: '$1'"
-
-  rm $2 > /dev/null 2>&1
 
   cat $1 > ~/.cache/hyprland_rice/translate_file_tmp
 
@@ -72,7 +71,7 @@ translate_file () {
     rm ~/.cache/hyprland_rice/temp_store > /dev/null 2>&1
   done
 
-  mv ~/.cache/hyprland_rice/translate_file_tmp $2
+  mv ~/.cache/hyprland_rice/translate_file_tmp ~/.cache/hyprland_rice/translated/$(basename $1)
 }
 
 for i in "${template_files[@]}"; do
@@ -81,6 +80,14 @@ for i in "${template_files[@]}"; do
   translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
 
   translate_file $template_file $generated_file $translate_to
+done
+
+for i in "${template_files[@]}"; do
+  template_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f1 -d ':' | sed 's/"//g')
+  generated_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f2 -d ':' | sed 's/"//g')
+  translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
+
+  mv ~/.cache/hyprland_rice/translated/$(basename $template_file) $generated_file
 done
 
 touch ~/.cache/hyprland_rice/theme_refreshed
