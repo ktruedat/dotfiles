@@ -10,6 +10,8 @@ run_hook pre &
 
 [[ -d ~/.hyprland_rice ]] || mkdir ~/.hyprland_rice
 
+[[ -f ~/.hyprland_rice/themes.txt ]] || echo "Gruvbox Dark (Built-In) -> ~/.config/hypr/themes/gruvbox_dark.txt" > ~/.hyprland_rice/themes.txt
+
 rm -rf ~/.cache/swww > /dev/null 2>&1
 
 swww init
