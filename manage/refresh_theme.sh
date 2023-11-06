@@ -8,10 +8,21 @@ template_files=(
   "rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
 )
 
-for i in "${template_files[@]}"; do
-  template_file=$(echo "$i" | sed 's/ : /:/g' | cut -f1 -d ":")
-  generated_file=$(echo "$i" | sed 's/ : /:/g' | cut -f2 -d ":")
-  translate_to=$(echo "$i" | sed 's/ : /:/g' | cut -f3 -d ":")
+get_color () {
+  theme_data="$(cat $HOME/.cache/hyprland_rice/theme.txt 2> /dev/null || cat $HOME/.config/hypr/themes/gruvbox_dark.txt 2> /dev/null)"
 
-  echo "TF: $template_file, GF: $generated_file, TT: $translate_to"
+  echo $theme_data | sed 's/;/\n/g' | grep "\$$1 ->" | sed 's/ -> /:/g' | cut -f2 -d ":"
+}
+
+translate_file () {
+  echo "Hello, world!"
+}
+
+for i in "${template_files[@]}"; do
+  template_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f1 -d ':' | sed 's/"//g')
+  generated_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f2 -d ':' | sed 's/"//g')
+  translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
+
+  translate_file $template_file $generated_file $translate_to
+  get_color foreground
 done
