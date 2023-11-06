@@ -10,6 +10,12 @@ template_files=(
   "rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
 )
 
+if [[ "$1" == "--preview" ]]; then
+  template_files=(
+    "rofi.rasi : $HOME/.config/rofi/themes/generated_preview.rasi : rasi"
+  )
+fi
+
 theme_file () {
   if [[ -f ~/.cache/hyprland_rice/theme.txt ]]; then
     echo "$HOME/.cache/hyprland_rice/theme.txt"
@@ -65,4 +71,4 @@ for i in "${template_files[@]}"; do
   translate_file $template_file $generated_file $translate_to
 done
 
-touch ~/.cache/hyprland_rice/theme_refreshed
+[[ "$1" == "--preview" ]] || touch ~/.cache/hyprland_rice/theme_refreshed
