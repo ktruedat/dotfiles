@@ -10,7 +10,7 @@ run_hook pre &
 
 [[ -d ~/.hyprland_rice ]] || mkdir ~/.hyprland_rice
 
-[[ -f ~/.hyprland_rice/themes.txt ]] || echo "Gruvbox Dark (Built-In) -> $HOME/.config/hypr/themes/gruvbox_dark" > ~/.hyprland_rice/themes.txt
+[[ -f ~/.hyprland_rice/themes.txt ]] || touch ~/.hyprland_rice/themes.txt
 
 rm -rf ~/.cache/swww > /dev/null 2>&1
 
@@ -20,7 +20,7 @@ swww img ~/.config/hypr/screen_pics/starting_rice.png
 
 [[ -f ~/.cache/hyprland_rice/theme_refreshed ]] || ~/.config/hypr/manage/refresh_theme.sh
 
-set_wallpaper ~/.config/hypr/wallpaper.png
+set_wallpaper ~/.cache/hyprland_rice/theme/wallpaper.png
 
 ~/.config/hypr/waybar/start
 ~/.config/hypr/swaync/start

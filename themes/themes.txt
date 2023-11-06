@@ -1,0 +1,1 @@
+$Gruvbox Dark (Default, Built-In) -> ~/.config/hypr/themes/gruvbox_dark;

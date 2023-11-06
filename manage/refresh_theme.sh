@@ -3,22 +3,17 @@
 mkdir ~/.cache/hyprland_rice > /dev/null 2>&1
 
 template_files=(
-  "eww.scss : $HOME/.config/hypr/eww/eww.scss : scss"
-  "waybar.css : $HOME/.config/hypr/waybar/style.css : css"
-  "swaync.css : $HOME/.config/hypr/swaync/style.css : css"
-  "alacritty.yml : $HOME/.config/alacritty/alacritty.yml : yml"
-  "rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
+  "$HOME/.config/hypr/templates/eww.scss : $HOME/.config/hypr/eww/eww.scss : scss"
+  "$HOME/.config/hypr/templates/waybar.css : $HOME/.config/hypr/waybar/style.css : css"
+  "$HOME/.config/hypr/templates/swaync.css : $HOME/.config/hypr/swaync/style.css : css"
+  "$HOME/.config/hypr/templates/alacritty.yml : $HOME/.config/alacritty/alacritty.yml : yml"
+  "$HOME/.config/hypr/templates/rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
 )
 
-arg_1="$1"
-arg_2="$2"
-
 theme_path () {
-  if [[ -d ~/.cache/hyprland_rice/theme ]]; then
-    echo "$HOME/.cache/hyprland_rice/theme"
-  else
-    echo "$HOME/.config/hypr/themes/gruvbox_dark"
-  fi
+  [[ -d ~/.cache/hyprland_rice/theme ]] || cp -r ~/.config/hypr/themes/gruvbox_dark ~/.cache/hyprland_rice/theme
+
+  echo "$HOME/.cache/hyprland_rice/theme"
 }
 
 get_color () {
@@ -32,7 +27,7 @@ translate_file () {
 
   rm $2 > /dev/null 2>&1
 
-  cat $HOME/.config/hypr/templates/$1 > $2
+  cat $1 > ~/.cache/hyprland_rice/translate_file_tmp
 
   color_keys=$(cat $(theme_path)/theme.txt | sed 's/;/\n/g' | sed 's/\$//g' | sed 's/ -> /:/g' | cut -f1 -d ":")
 
@@ -54,12 +49,14 @@ translate_file () {
   for i in ${color_keys[@]}; do
     rm ~/.cache/hyprland_rice/temp_store > /dev/null 2>&1
 
-    cat $2 | sed "s/${s_left}--${i}--${s_right}/$(get_color $i)/g" > ~/.cache/hyprland_rice/temp_store
-    rm $2
-    cat ~/.cache/hyprland_rice/temp_store > $2
+    cat ~/.cache/hyprland_rice/translate_file_tmp | sed "s/${s_left}--${i}--${s_right}/$(get_color $i)/g" > ~/.cache/hyprland_rice/temp_store
+    rm ~/.cache/hyprland_rice/translate_file_tmp
+    cat ~/.cache/hyprland_rice/temp_store > ~/.cache/hyprland_rice/translate_file_tmp
 
     rm ~/.cache/hyprland_rice/temp_store > /dev/null 2>&1
   done
+
+  mv ~/.cache/hyprland_rice/translate_file_tmp $2
 }
 
 for i in "${template_files[@]}"; do
