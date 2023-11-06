@@ -8,6 +8,8 @@ source ~/.config/hypr/lib.sh
 
 run_hook pre &
 
+[[ -d ~/.hyprland_rice ]] || mkdir ~/.hyprland_rice
+
 rm -rf ~/.cache/swww > /dev/null 2>&1
 
 swww init
