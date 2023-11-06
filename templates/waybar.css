@@ -5,9 +5,9 @@
 }
 
 window#waybar {
-    background-color: @background2;
-    border-bottom: 8px solid @background2-bottom;
-    color: @foreground;
+    background-color: @--background2--;
+    border-bottom: 8px solid @--background2-bottom--;
+    color: @--foreground--;
     transition-property: background-color;
     transition-duration: .5s;
 }
@@ -27,10 +27,10 @@ window#waybar.solo {
 
 button {
     all: unset;
-    background-color: @button;
-    color: @button-foreground;
+    background-color: @--button--;
+    color: @--button-foreground--;
     border: none;
-    border-bottom: 8px solid @button-bottom;
+    border-bottom: 8px solid @--button-bottom--;
     border-radius: 5px;
     margin-left: 4px;
     margin-bottom: 2px;
@@ -44,14 +44,14 @@ button {
 
 button:hover {
     background: inherit;
-    background-color: @button-hover;
-    border-bottom: 8px solid @button-bottom-hover;
+    background-color: @--button-hover--;
+    border-bottom: 8px solid @--button-bottom-hover--;
 }
 
 button.active {
     background: inherit;
-    background-color: @button-active;
-    border-bottom: 8px solid @button-bottom-active;
+    background-color: @--button-active--;
+    border-bottom: 8px solid @--button-bottom-active--;
 }
 
 #mode {
@@ -97,13 +97,13 @@ button.active {
 }
 
 #window {
-    background-color: @background3;
-    color: @foreground;
+    background-color: @--background3--;
+    color: @--foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @background3-bottom;
+    border-bottom: 8px solid @--background3-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
     padding-left: 10px;
@@ -111,13 +111,13 @@ button.active {
 }
 
 #custom-swaync {
-    background-color: @button;
-    color: @button-foreground;
+    background-color: @--button--;
+    color: @--button-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 18px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @button-bottom;
+    border-bottom: 8px solid @--button-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
     padding-left: 13px;
@@ -125,13 +125,13 @@ button.active {
 }
 
 #custom-menu {
-    background-color: @button;
-    color: @button-foreground;
+    background-color: @--button--;
+    color: @--button-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 18px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @button-bottom;
+    border-bottom: 8px solid @--button-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
     padding-left: 14px;
@@ -139,13 +139,13 @@ button.active {
 }
 
 #custom-powermenu {
-    background-color: @powermenu-button;
-    color: @powermenu-button-foreground;
+    background-color: @--powermenu-button--;
+    color: @--powermenu-button-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 22px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @powermenu-button-bottom;
+    border-bottom: 8px solid @--powermenu-button-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
     margin-right: 4px;
@@ -154,25 +154,25 @@ button.active {
 }
 
 #clock {
-    background-color: @waybar-clock;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-clock--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-clock-bottom;
+    border-bottom: 8px solid @--waybar-clock-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
 
 #battery {
-    background-color: @waybar-battery;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-battery--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-battery-bottom;
+    border-bottom: 8px solid @--waybar-battery-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
@@ -185,13 +185,13 @@ button.active {
 }
 
 #battery.critical:not(.charging) {
-    background-color: @waybar-battery-critical;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-battery-critical--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-battery-bottom-critical;
+    border-bottom: 8px solid @--waybar-battery-bottom-critical--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
@@ -201,25 +201,25 @@ label:focus {
 }
 
 #cpu {
-    background-color: @waybar-cpu;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-cpu--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-cpu-bottom;
+    border-bottom: 8px solid @--waybar-cpu-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
 
 #memory {
-    background-color: @waybar-memory;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-memory--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-memory-bottom;
+    border-bottom: 8px solid @--waybar-memory-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
@@ -229,13 +229,13 @@ label:focus {
 }
 
 #backlight {
-    background-color: @waybar-backlight;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-backlight--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-backlight-bottom;
+    border-bottom: 8px solid @--waybar-backlight-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
@@ -249,13 +249,13 @@ label:focus {
 }
 
 #pulseaudio {
-    background-color: @waybar-pulseaudio;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-pulseaudio--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-pulseaudio-bottom;
+    border-bottom: 8px solid @--waybar-pulseaudio-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
@@ -299,13 +299,13 @@ label:focus {
 }
 
 #tray {
-    background-color: @waybar-tray;
-    color: @waybar-module-foreground;
+    background-color: @--waybar-tray--;
+    color: @--waybar-module-foreground--;
     font-family: JetBrainsMono Nerd Font, monospace;
     font-size: 15px;
     font-weight: bold;
     border: none;
-    border-bottom: 8px solid @waybar-tray-bottom;
+    border-bottom: 8px solid @--waybar-tray-bottom--;
     border-radius: 5px;
     margin-bottom: 2px;
 }
@@ -378,9 +378,9 @@ label:focus {
 }
 
 tooltip {
-  background-color: @background2;
+  background-color: @--background2--;
   border: none;
-  border-bottom: 8px solid @background2-bottom;
+  border-bottom: 8px solid @--background2-bottom--;
   border-radius: 5px;
 }
 
@@ -393,7 +393,7 @@ tooltip decoration:backdrop {
 }
 
 tooltip label {
-  color: @foreground;
+  color: @--foreground--;
   font-family: JetBrainsMono Nerd Font, monospace;
   font-size: 16px;
   padding-left: 5px;

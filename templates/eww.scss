@@ -23,7 +23,7 @@
 }
 
 .rice-update-available label {
-  color: $foreground;
+  color: $--foreground--;
   font-size: 25px;
   font-family: "JetBrainsMono Nerd Font", sans-serif;
 }
@@ -34,11 +34,11 @@
 }
 
 .keybinds {
-  background-color: $background2;
+  background-color: $--background2--;
   border: none;
-  border-top: 8px solid $background2;
-  border-bottom: 8px solid $background2-bottom;
-  color: $foreground;
+  border-top: 8px solid $--background2--;
+  border-bottom: 8px solid $--background2-bottom--;
+  color: $--foreground--;
   min-height: 750px;
 }
 
@@ -48,30 +48,30 @@
 }
 
 .close-button {
-  background-color: $close-button;
+  background-color: $--close-button--;
   border: none;
-  border-bottom: 8px solid $close-button-bottom;
+  border-bottom: 8px solid $--close-button-bottom--;
   min-width: 48px;
   min-height: 40px;
 }
 
 .close-button label {
-  color: $close-button-foreground;
+  color: $--close-button-foreground--;
   font-size: 30px;
   font-weight: bold;
   padding-right: 12px;
 }
 
 .titlebar {
-  background-color: $background3;
+  background-color: $--background3--;
   border: none;
-  border-bottom: 8px solid $background3-bottom;
+  border-bottom: 8px solid $--background3-bottom--;
   margin: 0px;
   padding: 4px;
 }
 
 .titlebar-title label {
-  color: $foreground;
+  color: $--foreground--;
   font-size: 25px;
   font-weight: bold;
   font-family: "JetBrainsMono Nerd Font", sans-serif;
@@ -88,7 +88,7 @@ scrollbar {
 }
 
 scrollbar slider {
-  background-color: $slider;
+  background-color: $--slider--;
   min-width: 14px;
   min-height: 20px;
   border: none;
@@ -97,9 +97,9 @@ scrollbar slider {
 }
 
 .window-module {
-  background-color: $background4;
+  background-color: $--background4--;
   border: none;
-  border-bottom: 8px solid $background4-bottom;
+  border-bottom: 8px solid $--background4-bottom--;
   border-radius: 5px;
   margin-bottom: -6px;
   margin-left: 12px;
@@ -108,16 +108,16 @@ scrollbar slider {
 }
 
 .window-module label {
-  color: $foreground;
+  color: $--foreground--;
   font-family: JetBrainsMono Nerd Font, monospace;
   font-size: 15px;
   font-weight: bold;
 }
 
 .workspace-button {
-  background-color: $button;
+  background-color: $--button--;
   border: none;
-  border-bottom: 8px solid $button-bottom;
+  border-bottom: 8px solid $--button-bottom--;
   border-radius: 5px;
   margin-left: 4px;
   margin-bottom: -6px;
@@ -135,25 +135,25 @@ scrollbar slider {
 }
 
 .bar {
-  background-color: $background2;
-  border-bottom: 8px solid $background2-bottom;
-  color: $foreground;
+  background-color: $--background2--;
+  border-bottom: 8px solid $--background2-bottom--;
+  color: $--foreground--;
   border-radius: 0px;
 }
 
 .bar-menu {
-  background-color: $background2;
+  background-color: $--background2--;
   border: none;
-  border-bottom: 8px solid $background2-bottom;
-  color: $foreground;
+  border-bottom: 8px solid $--background2-bottom--;
+  color: $--foreground--;
   padding: 20px;
   border-radius: 10px;
 }
 
 .bar-menu-button {
-  background-color: $button;
+  background-color: $--button--;
   border: none;
-  border-bottom: 8px solid $button-bottom;
+  border-bottom: 8px solid $--button-bottom--;
   border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
@@ -164,7 +164,7 @@ scrollbar slider {
 }
 
 .bar-menu-button label {
-  color: $button-foreground;
+  color: $--button-foreground--;
   text-shadow: none;
   box-shadow: none;
   font-weight: bold;
@@ -178,14 +178,14 @@ scrollbar slider {
 
 .metric scale trough highlight {
   all: unset;
-  background-color: $metric-slider;
+  background-color: $--metric-slider--;
   color: #000000;
   border-radius: 50px;
 }
 
 .metric scale trough {
   all: unset;
-  background-color: $metric-slider-background;
+  background-color: $--metric-slider-background--;
   border-radius: 50px;
   min-height: 18px;
   min-width: 200px;
@@ -196,7 +196,7 @@ scrollbar slider {
 }
 
 label {
-  color: $foreground;
+  color: $--foreground--;
   font-family: bold;
 }
 
@@ -210,14 +210,14 @@ label {
 
 .metric-label-text label {
   font-size: 28px;
-  color: $metric-slider-foreground;
+  color: $--metric-slider-foreground--;
 }
 
 .powermenu-window {
-  background-color: $background2;
+  background-color: $--background2--;
   border: none;
-  border-bottom: 8px solid $background2-bottom;
-  color: $foreground;
+  border-bottom: 8px solid $--background2-bottom--;
+  color: $--foreground--;
   padding: 20px;
   border-radius: 10px;
 }
@@ -226,10 +226,10 @@ label {
   font-family: JetBrainsMono Nerd Font, monospace;
   font-weight: bold;
   font-size: 22px;
-  color: $foreground;
-  background-color: $background3;
+  color: $--foreground--;
+  background-color: $--background3--;
   border: none;
-  border-bottom: 8px solid $background3-bottom;
+  border-bottom: 8px solid $--background3-bottom--;
   padding-top: 5px;
   padding-bottom: 5px;
   margin-right: 4px;
@@ -237,9 +237,9 @@ label {
 }
 
 .powermenu-button {
-  background-color: $powermenu-button;
+  background-color: $--powermenu-button--;
   border: none;
-  border-bottom: 8px solid $powermenu-button-bottom;
+  border-bottom: 8px solid $--powermenu-button-bottom--;
   border-radius: 5px;
   text-shadow: none;
   box-shadow: none;
@@ -252,7 +252,7 @@ label {
 }
 
 .powermenu-button label {
-  color: $powermenu-button-foreground;
+  color: $--powermenu-button-foreground--;
   text-shadow: none;
   box-shadow: none;
   font-weight: bold;

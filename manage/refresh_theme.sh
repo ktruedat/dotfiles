@@ -10,11 +10,8 @@ template_files=(
   "rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
 )
 
-if [[ "$1" == "--preview" ]]; then
-  template_files=(
-    "rofi.rasi : $HOME/.config/rofi/themes/generated_preview.rasi : rasi"
-  )
-fi
+arg_1="$1"
+arg_2="$2"
 
 theme_file () {
   if [[ -f ~/.cache/hyprland_rice/theme.txt ]]; then
@@ -31,11 +28,13 @@ get_color () {
 }
 
 translate_file () {
+  echo "Template: '$1'"
+
   rm $2 > /dev/null 2>&1
 
   cat $HOME/.config/hypr/templates/$1 > $2
 
-  color_keys=$(cat $(theme_file) | sed 's/;/\n/g' | sed 's/\$//g' | sed 's/ -> /:/g' | cut -f1 -d ":" | sort | tac)
+  color_keys=$(cat $(theme_file) | sed 's/;/\n/g' | sed 's/\$//g' | sed 's/ -> /:/g' | cut -f1 -d ":")
 
   s_left=""
   s_right=""
@@ -55,7 +54,7 @@ translate_file () {
   for i in ${color_keys[@]}; do
     rm ~/.cache/hyprland_rice/temp_store > /dev/null 2>&1
 
-    cat $2 | sed "s/${s_left}${i}${s_right}/$(get_color $i)/g" > ~/.cache/hyprland_rice/temp_store
+    cat $2 | sed "s/${s_left}--${i}--${s_right}/$(get_color $i)/g" > ~/.cache/hyprland_rice/temp_store
     rm $2
     cat ~/.cache/hyprland_rice/temp_store > $2
 
@@ -71,4 +70,4 @@ for i in "${template_files[@]}"; do
   translate_file $template_file $generated_file $translate_to
 done
 
-[[ "$1" == "--preview" ]] || touch ~/.cache/hyprland_rice/theme_refreshed
+touch ~/.cache/hyprland_rice/theme_refreshed
