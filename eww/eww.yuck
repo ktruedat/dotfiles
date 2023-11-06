@@ -99,14 +99,21 @@
            )
 )
 
+(defwidget change-theme-button []
+           (bmb :onclick "scripts/change_theme"
+                :label "Change Theme"
+           )
+)
+
 (defwidget bar-menu-buttons []
            (box :class "bar-menu-buttons"
                 :orientation "v"
                 :space-evenly false
                 :halign "center"
                 (box :class "sbr-1"
-                     :orientation "h"
+                     :orientation "v"
                      :space-evenly true
+                     (change-theme-button)
                      (update-rice-button)
                 )
            )
@@ -124,6 +131,7 @@
                 :orientation "v"
                 :class "bar-menu"
                 (bar-menu-sliders)
+                (bar-menu-buttons)
            )
 )
 

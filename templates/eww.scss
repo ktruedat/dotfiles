@@ -161,6 +161,10 @@ scrollbar slider {
   padding-right: 10px;
   padding-top: 5px;
   padding-bottom: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  margin-bottom: 5px;
 }
 
 .bar-menu-button label {
@@ -170,6 +174,10 @@ scrollbar slider {
   font-weight: bold;
   font-size: 20px;
   font-family: JetBrainsMono Nerd Font, monospace;
+}
+
+.sbr-1 {
+  margin-top: 40px;
 }
 
 .bar-menu-spacer {

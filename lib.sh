@@ -3,7 +3,7 @@
 
 
 set_wallpaper () {
-	swww img "$1" -t grow --transition-pos top
+	swww img "$1" -t grow --transition-pos center
 }
 
 run_hook () {
