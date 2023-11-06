@@ -64,3 +64,5 @@ for i in "${template_files[@]}"; do
 
   translate_file $template_file $generated_file $translate_to
 done
+
+touch ~/.cache/hyprland_rice/theme_refreshed

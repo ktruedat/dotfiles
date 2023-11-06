@@ -8,7 +8,13 @@ source ~/.config/hypr/lib.sh
 
 run_hook pre &
 
+rm -rf ~/.cache/swww > /dev/null 2>&1
+
 swww init
+
+swww img ~/.config/hypr/screen_pics/starting_rice.png
+
+[[ -f ~/.cache/hyprland_rice/theme_refreshed ]] || ~/.config/hypr/manage/refresh_theme.sh
 
 set_wallpaper ~/.config/hypr/wallpaper.png
 
