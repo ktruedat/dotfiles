@@ -74,20 +74,40 @@ translate_file () {
   mv ~/.cache/hyprland_rice/translate_file_tmp ~/.cache/hyprland_rice/translated/$(basename $1)
 }
 
-for i in "${template_files[@]}"; do
-  template_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f1 -d ':' | sed 's/"//g')
-  generated_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f2 -d ':' | sed 's/"//g')
-  translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
+translate_file_fast () {
+  echo "Template: '$1' (FAST)"
 
-  translate_file $template_file $generated_file $translate_to
-done
+  oglo-hyprland-rice-theme-translate-rs --template $1 --generated $2 --language $3 --theme-txt $(theme_path)/theme.txt
+}
 
 for i in "${template_files[@]}"; do
   template_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f1 -d ':' | sed 's/"//g')
   generated_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f2 -d ':' | sed 's/"//g')
   translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
 
-  mv ~/.cache/hyprland_rice/translated/$(basename $template_file) $generated_file
+  if command -v oglo-hyprland-rice-theme-translate-rs > /dev/null 2>&1; then
+    translate_file_fast $template_file $generated_file $translate_to
+  else
+    translate_file $template_file $generated_file $translate_to
+  fi
 done
+
+second_iteration="yes"
+
+if command -v oglo-hyprland-rice-theme-translate-rs > /dev/null 2>&1; then
+  second_iteration="no"
+
+  echo "Skipping second iteration..."
+fi
+
+if [[ "$second_iteration" == "yes" ]]; then
+  for i in "${template_files[@]}"; do
+    template_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f1 -d ':' | sed 's/"//g')
+    generated_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f2 -d ':' | sed 's/"//g')
+    translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
+  
+    mv ~/.cache/hyprland_rice/translated/$(basename $template_file) $generated_file
+  done
+fi
 
 touch ~/.cache/hyprland_rice/theme_refreshed
