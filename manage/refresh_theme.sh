@@ -59,6 +59,9 @@ translate_file () {
   elif [[ "$3" == "hyprland-conf" ]]; then
     s_left='%{'
     s_right='}'
+  elif [[ "$3" == "generic" ]]; then
+    s_left='${'
+    s_right='}'
   fi
 
   for i in ${color_keys[@]}; do
