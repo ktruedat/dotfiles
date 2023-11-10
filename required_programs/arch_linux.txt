@@ -24,6 +24,7 @@ sox
 mint-themes
 xcursor-simp1e-gruvbox-light
 gtklock
+qt5-wayland
 eww-wayland
 git
 xdg-desktop-portal-hyprland
