@@ -11,16 +11,33 @@ key_to_value () {
   cat $HOME/.cache/hyprland_rice/theme_list.txt | grep "\$$1 ->" | sed 's/\$//g' | sed 's/ -> /\$/g' | cut -f2 -d "\$" | sed 's/;//g'
 }
 
-chosen_theme="$(cat $HOME/.cache/hyprland_rice/theme_list.txt | sed 's/\$//g' | sed 's/ -> /\$/g' | cut -f1 -d "\$" | rofi -dmenu -p " 󰉼  Themes ")"
+theme_path=""
 
-theme_path=$(key_to_value "$chosen_theme")
-theme_path=$(eval "echo $theme_path")
+if [[ "$1" == "" ]]; then
+  chosen_theme="$(cat $HOME/.cache/hyprland_rice/theme_list.txt | sed 's/\$//g' | sed 's/ -> /\$/g' | cut -f1 -d "\$" | rofi -dmenu -p " 󰉼  Themes ")"
+  
+  theme_path=$(key_to_value "$chosen_theme")
+  theme_path=$(eval "echo $theme_path")
+else
+  theme_path="$1"
+fi
 
 notify-send "Theme Chooser" "Setting theme... please wait..."
 
 rm -rf ~/.cache/hyprland_rice/theme > /dev/null 2>&1
 
 cp -r "$theme_path" "$HOME/.cache/hyprland_rice/theme"
+
+rm ~/.cache/hyprland_rice/theme_path.txt > /dev/null 2>&1
+echo "$theme_path" > ~/.cache/hyprland_rice/theme_path.txt
+
+rm ~/.cache/hyprland_rice/theme_refresh_id.txt > /dev/null 2>&1
+
+if [[ -f ~/.config/hypr/templates/refresh_id ]]; then
+  cp ~/.config/hypr/templates/refresh_id ~/.cache/hyprland_rice/theme_refresh_id.txt
+else
+  echo 'null' > ~/.cache/hyprland_rice/theme_refresh_id.txt
+fi
 
 ~/.config/hypr/manage/refresh_theme.sh
 ~/.config/hypr/scripts/refresh_after_theme_change.sh
