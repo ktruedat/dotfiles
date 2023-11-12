@@ -10,6 +10,7 @@ template_files=(
   "$HOME/.config/hypr/templates/swaync.css : $HOME/.config/hypr/swaync/style.css : css"
   "$HOME/.config/hypr/templates/alacritty.yml : $HOME/.config/alacritty/alacritty.yml : yml"
   "$HOME/.config/hypr/templates/rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
+  "$HOME/.config/hypr/templates/kitty.conf : $HOME/.config/kitty/kitty.conf : generic"
 )
 
 theme_path () {
