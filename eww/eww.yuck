@@ -105,6 +105,12 @@
            )
 )
 
+(defwidget open-keybinds-button []
+           (bmb :onclick "scripts/bmb scripts/self open keybinds"
+                :label "Show Binds"
+           )
+)
+
 (defwidget bar-menu-buttons []
            (box :class "bar-menu-buttons"
                 :orientation "v"
@@ -115,6 +121,7 @@
                      :space-evenly true
                      (change-theme-button)
                      (update-rice-button)
+                     (open-keybinds-button)
                 )
            )
 )
@@ -274,8 +281,20 @@
            (box :class "keybinds-parent-box"
                 :orientation "v"
                 :space-evenly false
-                (titlebar :title "Keybinds Guide" :close-button-onclick "scripts/self close keybinds")
+                (titlebar :title "Keybinds Guide" :close-button-onclick "scripts/close_keybinds_window")
                 (scroll :class "keybinds"
+                        :orientation "v"
+                        :space-evenly false
+                        keybinds
+                )
+           )
+)
+
+(defwidget keybinds-fullscreen []
+           (box :class "keybinds-parent-box"
+                :orientation "v"
+                :space-evenly true
+                (scroll :class "keybinds-fullscreen"
                         :orientation "v"
                         :space-evenly false
                         keybinds
@@ -319,6 +338,20 @@
            :windowtype "normal"
            :wm-ignore true
            (keybinds)
+)
+
+(defwindow keybinds-fullscreen
+           :monitor 0
+           :geometry (geometry :x "0px"
+                               :y "0px"
+                               :width "100%"
+                               :height "100%"
+                               :anchor "bottom center"
+                     )
+           :stacking "fg"
+           :windowtype "normal"
+           :wm-ignore true
+           (keybinds-fullscreen)
 )
 
 (defwindow bar-menu

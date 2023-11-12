@@ -33,15 +33,20 @@
   border: none;
 }
 
-.keybinds {
+.keybinds,
+.keybinds-fullscreen {
   background-color: $--background2--;
   border: none;
   border-top: 8px solid $--background2--;
   border-bottom: 8px solid $--background2-bottom--;
   color: $--foreground--;
+}
+
+.keybinds {
   min-height: 750px;
 }
 
+.keybinds-fullscreen label,
 .keybinds label {
   font-size: 20px;
   font-family: "JetBrainsMono Nerd Font", sans-serif;
