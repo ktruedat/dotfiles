@@ -6,13 +6,10 @@
   4. Make sure Curl, Bash, and Git are installed.
   5. Run this command: 
   ```
-  eval "$(curl https://gitlab.com/Oglo12/hyprland-rice/-/raw/main/manage/setup_1.sh)"
+  eval "$(curl https://gitlab.com/Oglo12/hyprland-rice/-/raw/main/manage/setup.sh)"
   ```
   6. Start Hyprland.
-  7. Run this command:
-  ```
-  ~/.config/hypr/manage/setup_2.sh
-  ```
+  7. (Optional) Source one of the alias files into your shell. (`~/.config/hypr/aliases/*.*`)
   8. Configure GTK and cursor theme in NWG Look.
 
 > Other Optional Programs to Install:
