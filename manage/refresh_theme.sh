@@ -4,13 +4,13 @@ mkdir ~/.cache/hyprland_rice > /dev/null 2>&1
 mkdir ~/.cache/hyprland_rice/translated > /dev/null 2>&1
 
 template_files=(
-  "$HOME/.config/hypr/templates/colors.conf : $HOME/.config/hypr/colors.conf : hyprland-conf"
-  "$HOME/.config/hypr/templates/eww.scss : $HOME/.config/hypr/eww/eww.scss : scss"
-  "$HOME/.config/hypr/templates/waybar.css : $HOME/.config/hypr/waybar/style.css : css"
-  "$HOME/.config/hypr/templates/swaync.css : $HOME/.config/hypr/swaync/style.css : css"
-  "$HOME/.config/hypr/templates/alacritty.yml : $HOME/.config/alacritty/alacritty.yml : yml"
-  "$HOME/.config/hypr/templates/rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
-  "$HOME/.config/hypr/templates/kitty.conf : $HOME/.config/kitty/kitty.conf : generic"
+  "colors.conf : $HOME/.config/hypr/colors.conf : hyprland-conf"
+  "eww.scss : $HOME/.config/hypr/eww/eww.scss : scss"
+  "waybar.css : $HOME/.config/hypr/waybar/style.css : css"
+  "swaync.css : $HOME/.config/hypr/swaync/style.css : css"
+  "alacritty.yml : $HOME/.config/alacritty/alacritty.yml : yml"
+  "rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
+  "kitty.conf : $HOME/.config/kitty/kitty.conf : generic"
 )
 
 theme_path () {
@@ -84,16 +84,26 @@ translate_file_fast () {
   oglo-hyprland-rice-theme-translate-rs --template $1 --generated $2 --language $3 --theme-txt $(theme_path)/theme.txt
 }
 
+tf_call () {
+  template_file="$HOME/.config/hypr/templates/$1"
+
+  if [[ -f "$(theme_path)/overwrite/$1" ]]; then
+    template_file="$(theme_path)/overwrite/$1"
+  fi
+
+  if command -v oglo-hyprland-rice-theme-translate-rs > /dev/null 2>&1; then
+    translate_file_fast $template_file $2 $3
+  else
+    translate_file $template_file $2 $3
+  fi
+}
+
 for i in "${template_files[@]}"; do
   template_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f1 -d ':' | sed 's/"//g')
   generated_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f2 -d ':' | sed 's/"//g')
   translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
 
-  if command -v oglo-hyprland-rice-theme-translate-rs > /dev/null 2>&1; then
-    translate_file_fast $template_file $generated_file $translate_to
-  else
-    translate_file $template_file $generated_file $translate_to
-  fi
+  tf_call $template_file $generated_file $translate_to
 done
 
 second_iteration="yes"
@@ -110,7 +120,7 @@ if [[ "$second_iteration" == "yes" ]]; then
     generated_file=$(echo \"$i\" | sed 's/ : /:/g' | cut -f2 -d ':' | sed 's/"//g')
     translate_to=$(echo \"$i\" | sed 's/ : /:/g' | cut -f3 -d ':' | sed 's/"//g')
   
-    mv ~/.cache/hyprland_rice/translated/$(basename $template_file) $generated_file
+    mv ~/.cache/hyprland_rice/translated/$template_file $generated_file
   done
 fi
 
