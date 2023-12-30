@@ -8,7 +8,7 @@ template_files=(
   "eww.scss : $HOME/.config/hypr/eww/eww.scss : scss"
   "waybar.css : $HOME/.config/hypr/waybar/style.css : css"
   "swaync.css : $HOME/.config/hypr/swaync/style.css : css"
-  "alacritty.yml : $HOME/.config/alacritty/alacritty.yml : yml"
+  "alacritty.toml : $HOME/.config/alacritty/alacritty.toml : toml"
   "rofi.rasi : $HOME/.config/rofi/themes/generated.rasi : rasi"
   "rofi_config.rasi : $HOME/.config/rofi/config.rasi : rasi"
   "kitty.conf : $HOME/.config/kitty/kitty.conf : generic"
@@ -53,6 +53,9 @@ translate_file () {
   elif [[ "$3" == "css" ]]; then
     s_left='@'
   elif [[ "$3" == "yml" ]]; then
+    s_left='${'
+    s_right='}'
+  elif [[ "$3" == "toml" ]]; then
     s_left='${'
     s_right='}'
   elif [[ "$3" == "rasi" ]]; then
