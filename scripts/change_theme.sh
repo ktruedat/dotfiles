@@ -7,14 +7,16 @@
 rm ~/.cache/hyprland_rice/theme_list.txt > /dev/null 2>&1
 
 if [[ "$1" == "" ]]; then
-  theme_categ=$(echo -e "All\nBuilt-In\nCustom" | rofi -dmenu -p " 󰉼  Categories ")
+  theme_categ=$(echo -e "All\nBuilt-In\nExtra Built-In\nCustom" | rofi -dmenu -p " 󰉼  Categories ")
   
   echo "Chosen Category: $theme_categ"
   
   if [[ $theme_categ == "All" ]]; then
-    cat $HOME/.config/hypr/themes/themes.txt $HOME/.hyprland_rice/themes.txt > $HOME/.cache/hyprland_rice/theme_list.txt
+    cat $HOME/.config/hypr/themes/themes.txt $HOME/.config/hypr/extra_themes/themes.txt $HOME/.hyprland_rice/themes.txt > $HOME/.cache/hyprland_rice/theme_list.txt
   elif [[ $theme_categ == "Built-In" ]]; then
     cat $HOME/.config/hypr/themes/themes.txt > $HOME/.cache/hyprland_rice/theme_list.txt
+  elif [[ $theme_categ == "Extra Built-In" ]]; then
+    cat $HOME/.config/hypr/extra_themes/themes.txt > $HOME/.cache/hyprland_rice/theme_list.txt
   elif [[ $theme_categ == "Custom" ]]; then
     cat $HOME/.hyprland_rice/themes.txt > $HOME/.cache/hyprland_rice/theme_list.txt
   else
