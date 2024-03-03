@@ -177,6 +177,13 @@
           )
 )
 
+(defwidget powermenu-exit-button []
+	   (powermenu-button :label ""
+			     :onclick "eww --config ~/.config/hypr/eww/ close powermenu-window"
+			     :class "powermenu-exit-button"
+	   )
+)
+
 (defwidget powermenu-window []
            (box :space-evenly false
                 :orientation "v"
@@ -190,9 +197,12 @@
                      (powermenu-logout-button)
                      (powermenu-poweroff-button)
                      (powermenu-reboot-button)
+		     (powermenu-exit-button)
                 )
+		
            )
 )
+
 
 (defwidget workspaces-module []
            (box :class "workspaces-module"

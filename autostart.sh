@@ -4,22 +4,15 @@
 
 source ~/.config/hypr/lib.sh
 
+#run_hook pre &
+
+#[[ -d ~/.hyprland_rice ]] || mkdir ~/.hyprland_rice
+#[[ -d ~/.cache/hyprland_rice ]] || mkdir ~/.cache/hyprland_rice
+
+#[[ -f ~/.hyprland_rice/themes.txt ]] || touch ~/.hyprland_rice/themes.txt
 
 
-run_hook pre &
-
-[[ -d ~/.hyprland_rice ]] || mkdir ~/.hyprland_rice
-[[ -d ~/.cache/hyprland_rice ]] || mkdir ~/.cache/hyprland_rice
-
-[[ -f ~/.hyprland_rice/themes.txt ]] || touch ~/.hyprland_rice/themes.txt
-
-rm -rf ~/.cache/swww > /dev/null 2>&1
-
-swww init
-
-swww img ~/.config/hypr/screen_pics/starting_rice.png -t none
-
-[[ -f ~/.cache/hyprland_rice/theme_refreshed ]] || ~/.config/hypr/manage/refresh_theme.sh
+#[[ -f ~/.cache/hyprland_rice/theme_refreshed ]] || ~/.config/hypr/manage/refresh_theme.sh
 
 if [[ -f ~/.cache/hyprland_rice/theme_refresh_id.txt ]]; then
   theme_refresh_id_old=$(cat ~/.cache/hyprland_rice/theme_refresh_id.txt)
@@ -38,7 +31,7 @@ else
   [[ $theme_refresh_id == $theme_refresh_id_old ]] || ~/.config/hypr/scripts/change_theme.sh "$theme_path"
 fi
 
-set_wallpaper ~/.cache/hyprland_rice/theme/wallpaper.png
+#set_wallpaper ~/.config/hypr/screen_pics/2.png
 
 ~/.config/hypr/waybar/start
 ~/.config/hypr/swaync/start
@@ -47,14 +40,19 @@ set_wallpaper ~/.cache/hyprland_rice/theme/wallpaper.png
 nm-applet &
 blueman-applet &
 
-lxsession &
-
-brightnessctl --restore
+#brightnessctl --restore
 
 eval "sleep 2; hyprctl reload" &
 
-eval "sleep 0.5; killall flameshot; pkill flameshot" &
-eval "sleep 1; killall flameshot; pkill flameshot" &
-eval "sleep 2; killall flameshot; pkill flameshot" &
+swww init
 
-run_hook post &
+eval `ssh-agent -s`
+
+
+# swww img ~/.config/hypr/screen_pics/2.png
+
+#eval "sleep 0.5; killall flameshot; pkill flameshot" &
+#eval "sleep 1; killall flameshot; pkill flameshot" &
+#eval "sleep 2; killall flameshot; pkill flameshot" &
+
+#run_hook post &

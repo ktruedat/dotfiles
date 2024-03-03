@@ -6,8 +6,8 @@ while [[ 1 == 1 ]]; do
   else
     cd ~/.config/hypr/eww
 
-    if [[ $(./scripts/get_output_volume) -gt 100 ]]; then
-      ./scripts/set_output_volume 100%
+    if [[ $(./scripts/get_output_volume) -gt 150 ]]; then
+      ./scripts/set_output_volume 150%
     fi
 
     cd ~
